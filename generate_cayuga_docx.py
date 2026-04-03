@@ -6,7 +6,7 @@ from docx.shared import Inches, Pt, Emu, RGBColor, Twips
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
 from docx.oxml.ns import qn, nsdecls
-from docx.oxml import parse_xml
+from docx.oxml import parse_xml, OxmlElement
 import os
 
 # --- Setup ---
@@ -27,6 +27,22 @@ for section in doc.sections:
     section.left_margin = Inches(1)
     section.right_margin = Inches(1)
 
+# --- Define Hyperlink character style so links are clickable ---
+styles_element = doc.styles.element
+hyperlink_style = parse_xml(
+    f'<w:style {nsdecls("w")} w:type="character" w:styleId="Hyperlink">'
+    f'  <w:name w:val="Hyperlink"/>'
+    f'  <w:basedOn w:val="DefaultParagraphFont"/>'
+    f'  <w:uiPriority w:val="99"/>'
+    f'  <w:unhideWhenUsed/>'
+    f'  <w:rPr>'
+    f'    <w:color w:val="0563C1"/>'
+    f'    <w:u w:val="single"/>'
+    f'  </w:rPr>'
+    f'</w:style>'
+)
+styles_element.append(hyperlink_style)
+
 # --- Hyperlink colors ---
 WIKI_BLUE = '0563C1'
 MAPS_GREEN = '1A7340'
@@ -35,25 +51,49 @@ OTHER_PURPLE = '6C3483'
 CTA_BG = 'EAF4FB'
 
 def add_hyperlink(paragraph, text, url, color_hex):
-    """Add a colored, underlined hyperlink to a paragraph."""
+    """Add a colored, underlined hyperlink to a paragraph using OxmlElement."""
     part = paragraph.part
-    r_id = part.relate_to(url, 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink', is_external=True)
-    hyperlink = parse_xml(f'<w:hyperlink {nsdecls("w")} r:id="{r_id}" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>')
-    from xml.sax.saxutils import escape as xml_escape
-    safe_text = xml_escape(text)
-    new_run = parse_xml(
-        f'<w:r {nsdecls("w")}>'
-        f'  <w:rPr>'
-        f'    <w:rStyle w:val="Hyperlink"/>'
-        f'    <w:color w:val="{color_hex}"/>'
-        f'    <w:u w:val="single"/>'
-        f'    <w:rFonts w:ascii="Arial" w:hAnsi="Arial"/>'
-        f'    <w:sz w:val="22"/>'
-        f'  </w:rPr>'
-        f'  <w:t xml:space="preserve">{safe_text}</w:t>'
-        f'</w:r>'
+    r_id = part.relate_to(
+        url,
+        'http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink',
+        is_external=True,
     )
-    hyperlink.append(new_run)
+    hyperlink = OxmlElement('w:hyperlink')
+    hyperlink.set(qn('r:id'), r_id)
+    hyperlink.set(qn('w:history'), '1')
+
+    run_elem = OxmlElement('w:r')
+    rPr = OxmlElement('w:rPr')
+
+    rStyle = OxmlElement('w:rStyle')
+    rStyle.set(qn('w:val'), 'Hyperlink')
+    rPr.append(rStyle)
+
+    color = OxmlElement('w:color')
+    color.set(qn('w:val'), color_hex)
+    rPr.append(color)
+
+    u = OxmlElement('w:u')
+    u.set(qn('w:val'), 'single')
+    rPr.append(u)
+
+    rFonts = OxmlElement('w:rFonts')
+    rFonts.set(qn('w:ascii'), 'Arial')
+    rFonts.set(qn('w:hAnsi'), 'Arial')
+    rPr.append(rFonts)
+
+    sz = OxmlElement('w:sz')
+    sz.set(qn('w:val'), '22')
+    rPr.append(sz)
+
+    run_elem.append(rPr)
+
+    t = OxmlElement('w:t')
+    t.set(qn('xml:space'), 'preserve')
+    t.text = text
+    run_elem.append(t)
+
+    hyperlink.append(run_elem)
     paragraph._p.append(hyperlink)
     return paragraph
 
@@ -275,6 +315,8 @@ add_run(cap, '. She lived here from 1859 until her death in 1913.', italic=True)
 h3 = add_heading_styled('Auburn', level=3)
 meta = doc.add_paragraph()
 add_run(meta, 'CAYUGA COUNTY \u00b7 NORTH END OF THE LAKE \u00b7 POP. ~26,000', bold=True, size=10)
+best = doc.add_paragraph()
+add_run(best, 'BEST FOR THE REFORM CORRIDOR AND HARRIET TUBMAN', bold=True, size=10)
 
 p = doc.add_paragraph()
 add_hyperlink(p, 'Auburn', 'https://www.google.com/maps/search/?api=1&query=Auburn+NY', MAPS_GREEN)
@@ -303,6 +345,8 @@ add_run(p2, ' Day.')
 add_heading_styled('Aurora', level=3)
 meta = doc.add_paragraph()
 add_run(meta, 'CAYUGA COUNTY \u00b7 EAST SHORE, MID-LAKE \u00b7 POP. ~700', bold=True, size=10)
+best = doc.add_paragraph()
+add_run(best, 'BEST FOR THE EAST-SHORE OVERNIGHT AND THE VILLAGE WALK', bold=True, size=10)
 
 p = doc.add_paragraph()
 add_run(p, 'See the anchor identity section above \u2014 the full biography is there. What\'s worth adding for the town portrait: ')
@@ -327,6 +371,8 @@ add_run(cap, '.', italic=True)
 add_heading_styled('Ithaca', level=3)
 meta = doc.add_paragraph()
 add_run(meta, 'TOMPKINS COUNTY \u00b7 SOUTH END OF THE LAKE \u00b7 POP. ~35,000 + 20,000 STUDENTS', bold=True, size=10)
+best = doc.add_paragraph()
+add_run(best, 'BEST FOR GORGES, FOOD, AND THE SOUTHERN BASE', bold=True, size=10)
 
 p = doc.add_paragraph()
 add_hyperlink(p, 'Ithaca', 'https://www.google.com/maps/search/?api=1&query=Ithaca+NY', MAPS_GREEN)
@@ -362,6 +408,8 @@ add_run(cap, '. The trail drops 400 feet through Devonian shale from Cornell\'s 
 add_heading_styled('Seneca Falls', level=3)
 meta = doc.add_paragraph()
 add_run(meta, 'SENECA COUNTY \u00b7 NORTHWEST CORNER \u00b7 POP. ~6,800', bold=True, size=10)
+best = doc.add_paragraph()
+add_run(best, 'BEST FOR THE WOMEN\'S RIGHTS STORY AND THE DECLARATION OF SENTIMENTS', bold=True, size=10)
 
 p = doc.add_paragraph()
 add_run(p, 'On July 19-20, 1848, 300 people gathered in the ')
@@ -395,6 +443,8 @@ add_run(cap, '.', italic=True)
 add_heading_styled('Trumansburg', level=3)
 meta = doc.add_paragraph()
 add_run(meta, 'TOMPKINS COUNTY \u00b7 WEST SHORE, MID-LAKE \u00b7 POP. ~1,500', bold=True, size=10)
+best = doc.add_paragraph()
+add_run(best, 'BEST FOR THE WEST-SHORE DAY AND TAUGHANNOCK FALLS', bold=True, size=10)
 
 p = doc.add_paragraph()
 add_run(p, 'Two miles south of ')
@@ -409,6 +459,8 @@ add_run(p, '. That geography makes it the anchor for a west-shore day. Small mai
 add_heading_styled('Union Springs', level=3)
 meta = doc.add_paragraph()
 add_run(meta, 'CAYUGA COUNTY \u00b7 EAST SHORE, UPPER MID-LAKE \u00b7 POP. ~1,100', bold=True, size=10)
+best = doc.add_paragraph()
+add_run(best, 'BEST FOR SMALL-PRODUCTION RIESLING AND LAKEFRONT DINING', bold=True, size=10)
 
 p = doc.add_paragraph()
 add_hyperlink(p, 'Heart & Hands Wine Company', 'https://www.heartandhandswine.com/', OTHER_PURPLE)
