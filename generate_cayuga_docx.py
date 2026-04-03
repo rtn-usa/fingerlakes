@@ -624,19 +624,19 @@ add_hyperlink(badge_p, 'Finger Lakes Heritage Trail', 'https://upstate.tourismo.
 add_run(badge_p, ' passport badge.', italic=True)
 
 heritage_sites = [
-    ('Harriet Tubman National Historical Park', 'Auburn / Fleming', 'The home, the Home for the Aged, the Thompson AME Zion Church. NPS visitor center at the church.', 'https://www.nps.gov/hart/', 'https://www.google.com/maps/search/?api=1&query=Harriet+Tubman+National+Historical+Park+Auburn+NY'),
-    ('Fort Hill Cemetery', 'Auburn', 'Tubman\'s burial site. Designated as park 1836. Path Through History site.', None, 'https://www.google.com/maps/search/?api=1&query=Fort+Hill+Cemetery+Auburn+NY'),
-    ('Seward House Museum', 'Auburn', 'Underground Railroad site. Original Seward furnishings and documents. Path Through History.', 'https://www.sewardhouse.org/', 'https://www.google.com/maps/search/?api=1&query=Seward+House+Museum+Auburn+NY'),
-    ('NYS Equal Rights Heritage Center', 'Auburn', 'Exhibits on Tubman, Stanton, the reform network.', None, 'https://www.google.com/maps/search/?api=1&query=New+York+State+Equal+Rights+Heritage+Center+Auburn+NY'),
-    ('Willard Memorial Chapel', 'Auburn', 'Only complete unaltered Tiffany interior in the United States. 1894. Path Through History.', None, 'https://www.google.com/maps/search/?api=1&query=Willard+Memorial+Chapel+Auburn+NY'),
-    ('Women\'s Rights National Historical Park', 'Seneca Falls', 'Wesleyan Chapel, M\'Clintock House (Waterloo), Stanton House. Declaration of Sentiments site.', 'https://www.nps.gov/wori/', 'https://www.google.com/maps/search/?api=1&query=Womens+Rights+National+Historical+Park+Seneca+Falls+NY'),
-    ('Howland Stone Store Museum', 'Aurora', '1837 cobblestone building. Quaker abolitionist family. Underground Railroad connected.', None, 'https://www.google.com/maps/search/?api=1&query=Howland+Stone+Store+Museum+Aurora+NY'),
-    ('Montezuma Heritage Park', 'Montezuma', 'Along Seneca River and Erie Canal. Underground Railroad crossing at the lake\'s north end.', None, 'https://www.google.com/maps/search/?api=1&query=Montezuma+Heritage+Park+NY'),
-    ('Museum of the Earth', 'Ithaca', 'Paleontological museum at Cornell. The glacial formation story told in stone.', 'https://www.museumoftheearth.org/', 'https://www.google.com/maps/search/?api=1&query=Museum+of+the+Earth+Ithaca+NY'),
-    ('Ward O\'Hara Agricultural Museum', 'Auburn', 'Regional agricultural history. Connects farming past to contemporary farm trail.', None, 'https://www.google.com/maps/search/?api=1&query=Ward+O+Hara+Agricultural+Museum+Auburn+NY'),
+    ('Harriet Tubman National Historical Park', 'Auburn / Fleming', 'Where freedom found an address', 'The home, the Home for the Aged, the Thompson AME Zion Church. NPS visitor center at the church. Tubman lived at 180 South Street from 1859 until her death in 1913, making it the longest-occupied site in the Underground Railroad network. The Home for the Aged, which she built in 1908 and deeded to the Thompson AME Zion Church, served elderly African Americans with nowhere else to go. The NPS visitor center at the church is the best starting point; rangers lead guided walks to the residence and the Home for the Aged. Open year-round. Free admission.', 'https://www.nps.gov/hart/', 'https://www.google.com/maps/search/?api=1&query=Harriet+Tubman+National+Historical+Park+Auburn+NY'),
+    ('Fort Hill Cemetery', 'Auburn', 'The marker is famously spare: just her name', 'Tubman\'s burial site, three blocks from her home. Designated as a public park in 1836, the cemetery also holds the graves of William H. Seward and other figures from Auburn\'s reform era. The Tubman gravesite is marked with a simple headstone. Path Through History site.', None, 'https://www.google.com/maps/search/?api=1&query=Fort+Hill+Cemetery+Auburn+NY'),
+    ('Seward House Museum', 'Auburn', 'The senator who sold Tubman a farm and bought Alaska', 'Underground Railroad documented stop and the private residence of William Henry Seward, who served as Governor, Senator, and Secretary of State. Original furnishings, documents, and the room where Seward arranged the land sale to Tubman. Frederick Douglass was a frequent guest. Operated as a museum since 1955. Path Through History site.', 'https://www.sewardhouse.org/', 'https://www.google.com/maps/search/?api=1&query=Seward+House+Museum+Auburn+NY'),
+    ('NYS Equal Rights Heritage Center', 'Auburn', 'The reform network, mapped and explained', 'Interactive exhibits on Tubman, Stanton, Douglass, and the overlapping reform movements that ran through this corridor. The center connects the heritage sites into a single narrative and serves as a practical starting point for the Auburn walking itinerary. Free admission.', None, 'https://www.google.com/maps/search/?api=1&query=New+York+State+Equal+Rights+Heritage+Center+Auburn+NY'),
+    ('Willard Memorial Chapel', 'Auburn', 'The last complete Tiffany interior on earth', 'The only complete, unaltered Louis Comfort Tiffany interior remaining in the United States. Tiffany designed the entire space in 1894: the stained glass, the mosaic floor tiles, the metalwork, the oak furnishings. It survived because the adjoining seminary closed and transferred ownership carefully rather than demolishing. Most people driving through Auburn don\'t know it exists. Path Through History site.', None, 'https://www.google.com/maps/search/?api=1&query=Willard+Memorial+Chapel+Auburn+NY'),
+    ('Women\'s Rights National Historical Park', 'Seneca Falls', 'Where 300 people rewrote the rules in two days', 'The Wesleyan Chapel where 300 people gathered on July 19-20, 1848 for the first formal women\'s rights convention in American history. Elizabeth Cady Stanton read the Declaration of Sentiments; Frederick Douglass made the argument that clinched the suffrage vote. Also encompasses the M\'Clintock House in Waterloo where the Declaration was drafted and Stanton\'s home. NPS visitor center on Fall Street.', 'https://www.nps.gov/wori/', 'https://www.google.com/maps/search/?api=1&query=Womens+Rights+National+Historical+Park+Seneca+Falls+NY'),
+    ('Howland Stone Store Museum', 'Aurora', 'Quaker abolitionists, cobblestone walls, 1837', '1837 cobblestone commercial building on Aurora\'s main street. The Howland family were prominent Quaker abolitionists connected to the Underground Railroad network. The museum preserves the building and tells the story of the reform-era families who made Aurora a node in the abolitionist movement decades before Tubman arrived.', None, 'https://www.google.com/maps/search/?api=1&query=Howland+Stone+Store+Museum+Aurora+NY'),
+    ('Montezuma Heritage Park', 'Montezuma', 'The crossing point at the lake\'s north end', 'Along the Seneca River and Erie Canal at Cayuga Lake\'s northern outlet. The park marks a documented Underground Railroad crossing where the canal and river systems provided routes north toward Canada. The landscape connects the heritage corridor to the waterways that made the network function.', None, 'https://www.google.com/maps/search/?api=1&query=Montezuma+Heritage+Park+NY'),
+    ('Museum of the Earth', 'Ithaca', 'Two million years of glacial history told in stone', 'Paleontological research museum affiliated with Cornell. The permanent collection explains the glacial formation that carved the Finger Lakes, created the gorges, and deposited the shale soils that make the wine region possible. The Right Whale skeleton in the main hall is 40 feet long. A useful first stop for visitors who want to understand why the landscape looks the way it does.', 'https://www.museumoftheearth.org/', 'https://www.google.com/maps/search/?api=1&query=Museum+of+the+Earth+Ithaca+NY'),
+    ('Ward O\'Hara Agricultural Museum', 'Auburn', 'Known for connecting farming past to the contemporary trail', 'Regional agricultural history spanning two centuries of Finger Lakes farming. The collection connects the practices of the Haudenosaunee and early settlers to the contemporary farm trail. Useful context for the Cayuga Farm Loop.', None, 'https://www.google.com/maps/search/?api=1&query=Ward+O+Hara+Agricultural+Museum+Auburn+NY'),
 ]
 
-for name, location, desc, official_url, maps_url in heritage_sites:
+for name, location, subtitle, desc, official_url, maps_url in heritage_sites:
     p = doc.add_paragraph()
     add_run(p, '\u2014 ')
     if official_url:
@@ -645,7 +645,9 @@ for name, location, desc, official_url, maps_url in heritage_sites:
         add_run(p, name, bold=True)
     add_run(p, ' ')
     add_hyperlink(p, location, maps_url, MAPS_GREEN)
-    add_run(p, ' ' + desc)
+    sub_p = doc.add_paragraph()
+    add_run(sub_p, subtitle, italic=True)
+    doc.add_paragraph(desc)
 
 print("Part 3 done: heritage corridor")
 
@@ -673,23 +675,25 @@ add_run(cap, '. The east shore\'s shale slopes produce some of the most precisel
 add_heading_styled('Producers worth naming', level=3)
 
 producers = [
-    ('Heart & Hands Wine Company', 'Union Springs \u2014 east shore', 'Small-production Riesling specialist. The east-shore expression at its most focused.', 'https://www.heartandhandswine.com/', 'https://www.google.com/maps/search/?api=1&query=Heart+and+Hands+Wine+Company+Union+Springs+NY'),
-    ('Treleaven Wines', 'King Ferry \u2014 east shore', 'Thirty-year estate. Award-winning dry Riesling, outdoor terrace overlooking the lake.', 'https://www.treleavenwines.com/', 'https://www.google.com/maps/search/?api=1&query=Treleaven+Wines+King+Ferry+NY'),
-    ('Boundary Breaks Vineyard', 'Lodi \u2014 east Cayuga / Seneca border', 'Single-vineyard Riesling program. The argument for why single-vineyard designations matter in this AVA.', 'https://www.boundarybreaks.com/', 'https://www.google.com/maps/search/?api=1&query=Boundary+Breaks+Vineyard+Lodi+NY'),
-    ('Americana Vineyards', 'Interlaken \u2014 west shore', 'One of the older Cayuga producers. Also cider. Family-run.', 'https://www.americanavineyards.com/', 'https://www.google.com/maps/search/?api=1&query=Americana+Vineyards+Interlaken+NY'),
-    ('Buttonwood Grove Winery', 'Romulus \u2014 west shore', 'Estate grown, lakeside tasting room.', 'https://www.buttonwoodgrove.com/', 'https://www.google.com/maps/search/?api=1&query=Buttonwood+Grove+Winery+Romulus+NY'),
-    ('Frontenac Point Vineyard', 'Trumansburg \u2014 west shore', 'Family estate near Taughannock. One of the trail\'s quieter stops.', 'https://www.frontenacpoint.com/', 'https://www.google.com/maps/search/?api=1&query=Frontenac+Point+Vineyard+Trumansburg+NY'),
-    ('Six Mile Creek Vineyards', 'Ithaca', 'Closest winery to downtown Ithaca. The entry point for first-time visitors.', 'https://www.sixmilecreek.com/', 'https://www.google.com/maps/search/?api=1&query=Six+Mile+Creek+Vineyards+Ithaca+NY'),
-    ('Long Point Winery', 'Aurora \u2014 east shore', 'Worth pairing with a stay at the Inns of Aurora.', 'https://www.longpointwinery.com/', 'https://www.google.com/maps/search/?api=1&query=Long+Point+Winery+Aurora+NY'),
+    ('Heart & Hands Wine Company', 'Union Springs \u2014 east shore', 'The east shore at its most focused', 'Small-production Riesling specialist. Tom and Susan Higgins farm a single east-shore vineyard and make wine with a restraint that lets the site speak. The tasting room is intimate and unhurried. If you want to understand what Cayuga east-shore Riesling tastes like at its most precise, this is the stop.', 'https://www.heartandhandswine.com/', 'https://www.google.com/maps/search/?api=1&query=Heart+and+Hands+Wine+Company+Union+Springs+NY'),
+    ('Treleaven Wines', 'King Ferry \u2014 east shore', 'Thirty years on the same hillside', 'Thirty-year estate operation on the east shore. Award-winning dry Riesling from vines that have had decades to find their depth. Outdoor terrace overlooking the lake. The kind of producer that doesn\'t need to explain itself because the wine does the talking.', 'https://www.treleavenwines.com/', 'https://www.google.com/maps/search/?api=1&query=Treleaven+Wines+King+Ferry+NY'),
+    ('Boundary Breaks Vineyard', 'Lodi \u2014 east Cayuga / Seneca border', 'One vineyard, one variety, no compromises', 'Single-vineyard Riesling program on the ridge between Cayuga and Seneca Lakes. Wine Enthusiast named their Dry Riesling to its Top 100 Wines in the World twice. No buses, no groups larger than six. The argument for why single-vineyard designations matter in this AVA.', 'https://www.boundarybreaks.com/', 'https://www.google.com/maps/search/?api=1&query=Boundary+Breaks+Vineyard+Lodi+NY'),
+    ('Americana Vineyards', 'Interlaken \u2014 west shore', 'Known for longevity and a family welcome', 'One of the older Cayuga producers, family-run since the beginning. Wine and cider on the same property, a broad portfolio that serves first-time trail visitors and repeat customers equally well. The west-shore stop with the widest range.', 'https://www.americanavineyards.com/', 'https://www.google.com/maps/search/?api=1&query=Americana+Vineyards+Interlaken+NY'),
+    ('Buttonwood Grove Winery', 'Romulus \u2014 west shore', 'Estate-grown wine, lakeside pour', 'Estate-grown grapes, lakeside tasting room on the west shore. The vineyard faces the lake directly, and the tasting room takes advantage of it. A straightforward, well-run operation that rewards a stop on the Route 89 loop.', 'https://www.buttonwoodgrove.com/', 'https://www.google.com/maps/search/?api=1&query=Buttonwood+Grove+Winery+Romulus+NY'),
+    ('Frontenac Point Vineyard', 'Trumansburg \u2014 west shore', 'The quiet stop near Taughannock', 'Family estate on the west shore near Taughannock Falls State Park. Small production, personal pours, the kind of stop where the winemaker might be the one pouring. One of the trail\'s quieter experiences, best paired with a Taughannock visit.', 'https://www.frontenacpoint.com/', 'https://www.google.com/maps/search/?api=1&query=Frontenac+Point+Vineyard+Trumansburg+NY'),
+    ('Six Mile Creek Vineyards', 'Ithaca', 'The closest winery to the Commons', 'Closest winery to downtown Ithaca, making it the natural entry point for first-time visitors and the last stop before heading back to town. Broad portfolio, casual tasting room, outdoor seating with valley views.', 'https://www.sixmilecreek.com/', 'https://www.google.com/maps/search/?api=1&query=Six+Mile+Creek+Vineyards+Ithaca+NY'),
+    ('Long Point Winery', 'Aurora \u2014 east shore', 'Best paired with a night at the Inns', 'East-shore tasting room in Aurora, worth combining with a stay at the Inns of Aurora for the complete east-shore day. The view from the tasting room faces west across the lake. Small-scale, personal service.', 'https://www.longpointwinery.com/', 'https://www.google.com/maps/search/?api=1&query=Long+Point+Winery+Aurora+NY'),
 ]
 
-for name, location, desc, official_url, maps_url in producers:
+for name, location, subtitle, desc, official_url, maps_url in producers:
     p = doc.add_paragraph()
     add_run(p, '\u2014 ')
     add_hyperlink(p, name, official_url, OTHER_PURPLE)
     add_run(p, ' ')
     add_hyperlink(p, location, maps_url, MAPS_GREEN)
-    add_run(p, ' ' + desc)
+    sub_p = doc.add_paragraph()
+    add_run(sub_p, subtitle, italic=True)
+    doc.add_paragraph(desc)
 
 # How to run the trail
 add_heading_styled('How to run the trail', level=3)
@@ -708,20 +712,44 @@ add_run(p, ' between. The east shore is the better second-day drive: fewer stops
 # ============================================================
 add_heading_styled('Farms, cider, and food', level=2)
 
-p = doc.add_paragraph()
-add_run(p, 'The ')
-add_hyperlink(p, 'Finger Lakes Cider House', 'https://www.fingerlakesciderhouse.com/', OTHER_PURPLE)
-add_run(p, ' at ')
-add_hyperlink(p, 'Good Life Farm', 'https://www.google.com/maps/search/?api=1&query=Good+Life+Farm+Interlaken+NY', MAPS_GREEN)
-add_run(p, ' sits on Cayuga\'s western shore outside ')
-add_hyperlink(p, 'Trumansburg', 'https://www.google.com/maps/search/?api=1&query=Trumansburg+NY', MAPS_GREEN)
-add_run(p, ' \u2014 four cideries under one roof, a working organic farm, food sourced from the neighboring properties. Two miles south, ')
-add_hyperlink(p, 'Lively Run Dairy', 'https://www.livelyrun.com/', OTHER_PURPLE)
-add_run(p, ' has been making goat cheese in ')
-add_hyperlink(p, 'Interlaken', 'https://www.google.com/maps/search/?api=1&query=Interlaken+NY', MAPS_GREEN)
-add_run(p, ' since 1982. These two stops, with the farm stands along Route 89, constitute what the itinerary calls the ')
-add_hyperlink(p, 'Cayuga Farm Loop', 'https://upstate.tourismo.app/itineraries/cayuga-farm-loop', UPSTATE_RED)
-add_run(p, '. It is a very good day.')
+# --- Finger Lakes Cider House ---
+farm_p = doc.add_paragraph()
+add_run(farm_p, '\u2014 ')
+add_hyperlink(farm_p, 'Finger Lakes Cider House at Good Life Farm', 'https://www.fingerlakesciderhouse.com/', OTHER_PURPLE)
+add_run(farm_p, ' ')
+add_hyperlink(farm_p, 'Interlaken / Trumansburg', 'https://www.google.com/maps/search/?api=1&query=Good+Life+Farm+Interlaken+NY', MAPS_GREEN)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'Four cideries under one roof on a working organic farm', italic=True)
+doc.add_paragraph('The anchor of the Cayuga Farm Loop. Four cideries share a single tasting room on a working organic farm on Cayuga\'s western shore outside Trumansburg. Food is sourced from neighboring properties. The farm itself is open to walk; the cideries rotate their offerings seasonally. Pair with a stop at Lively Run Dairy two miles south for the full farm corridor experience. Badge: Finger Lakes Farm Trail.')
+
+# --- Lively Run Dairy ---
+farm_p = doc.add_paragraph()
+add_run(farm_p, '\u2014 ')
+add_hyperlink(farm_p, 'Lively Run Dairy', 'https://www.livelyrun.com/', OTHER_PURPLE)
+add_run(farm_p, ' ')
+add_hyperlink(farm_p, 'Interlaken', 'https://www.google.com/maps/search/?api=1&query=Lively+Run+Dairy+Interlaken+NY', MAPS_GREEN)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'Goat cheese since 1982, before artisan was a category', italic=True)
+doc.add_paragraph('Lively Run has been making goat cheese in Interlaken since 1982, which makes it one of the oldest artisan creameries in the Finger Lakes. The farm store sells the full line; the goats are visible from the parking area. Two miles south of the Finger Lakes Cider House on Route 89. Badge: Finger Lakes Farm Trail.')
+
+# --- Ithaca Farmers Market ---
+farm_p = doc.add_paragraph()
+add_run(farm_p, '\u2014 ')
+add_hyperlink(farm_p, 'Ithaca Farmers Market', 'https://www.ithacamarket.com/', OTHER_PURPLE)
+add_run(farm_p, ' ')
+add_hyperlink(farm_p, 'Steamboat Landing, Ithaca', 'https://www.google.com/maps/search/?api=1&query=Ithaca+Farmers+Market+Steamboat+Landing', MAPS_GREEN)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'The single best food destination on the lake', italic=True)
+doc.add_paragraph('Saturday and Sunday at Steamboat Landing, producers-only, within sight of Cayuga Lake. Over 130 active vendors, everything grown or made within 30 miles of the pavilion. The market runs April through December on Saturdays, May through November on Sundays. Come early on Saturday; the parking lot fills by 10am.')
+
+# --- Route 89 Farm Stands ---
+farm_p = doc.add_paragraph()
+add_run(farm_p, '\u2014 Route 89 Farm Stands')
+add_run(farm_p, ' ', bold=True)
+add_hyperlink(farm_p, 'West shore, Ithaca to Romulus', 'https://www.google.com/maps/search/?api=1&query=Route+89+Cayuga+Lake+NY', MAPS_GREEN)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'Known for the farm corridor that predates the wine trail', italic=True)
+doc.add_paragraph('The farm stands along Route 89 on Cayuga\'s west shore have been there longer than the wine trail designation. June through October, the road between Ithaca and Romulus is lined with seasonal produce, cut flowers, and honey. No single stand dominates; the cumulative effect is the point. Badge: Finger Lakes Farm Trail.')
 
 add_image_placeholder('IMAGE: Finger Lakes Cider House at Good Life Farm \u2014 tasting room exterior, farm setting, Cayuga Lake in background')
 cap = doc.add_paragraph()
@@ -731,13 +759,6 @@ add_hyperlink(cap, 'Good Life Farm', 'https://www.google.com/maps/search/?api=1&
 add_run(cap, ', ', italic=True)
 add_hyperlink(cap, 'Interlaken', 'https://www.google.com/maps/search/?api=1&query=Interlaken+NY', MAPS_GREEN)
 add_run(cap, '. Four cideries under one roof on a working organic farm on Route 89.', italic=True)
-
-p2 = doc.add_paragraph()
-add_run(p2, 'The ')
-add_hyperlink(p2, 'Ithaca Farmers Market', 'https://www.ithacamarket.com/', OTHER_PURPLE)
-add_run(p2, ' Saturday and Sunday at ')
-add_hyperlink(p2, 'Steamboat Landing', 'https://www.google.com/maps/search/?api=1&query=Ithaca+Farmers+Market+Steamboat+Landing', MAPS_GREEN)
-add_run(p2, ', producers-only, within sight of Cayuga Lake. Over 130 active vendors, everything grown or made within 30 miles of the pavilion. The market runs April through December on Saturdays, May through November on Sundays. It is the single best food destination on the lake.')
 
 add_image_placeholder('IMAGE: Ithaca Farmers Market \u2014 Steamboat Landing, Cayuga Lake visible, vendors and pavilion')
 cap = doc.add_paragraph()
@@ -823,41 +844,47 @@ add_run(cap, '. 215 feet \u2014 three stories taller than Niagara. The gorge tra
 
 # Taughannock Falls State Park
 add_heading_styled('Taughannock Falls State Park', level=3)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'Three stories taller than Niagara, and you can walk right up to it', italic=True)
 p = doc.add_paragraph()
 add_run(p, 'Two miles north of ')
 add_hyperlink(p, 'Trumansburg', 'https://www.google.com/maps/search/?api=1&query=Trumansburg+NY', MAPS_GREEN)
-add_run(p, ' on Route 89. Flat gorge trail to the base of the falls. Swimming area and marina on the lake, summer concert series. The Black Diamond Trail runs from Taughannock south to the Cayuga Waterfront Trail in ')
+add_run(p, ' on Route 89. The 215-foot drop is the tallest single-drop waterfall east of the Rockies. Flat gorge trail to the base of the falls, under a mile. Swimming area and marina on the lake, summer concert series. The Black Diamond Trail runs from Taughannock south to the Cayuga Waterfront Trail in ')
 add_hyperlink(p, 'Ithaca', 'https://www.google.com/maps/search/?api=1&query=Ithaca+NY', MAPS_GREEN)
-add_run(p, ' \u2014 roughly 12 miles, flat, good for cycling.')
+add_run(p, ' \u2014 roughly 12 miles, flat, good for cycling. Go in April when the snowmelt is running and the sound reaches the trailhead.')
 
 # Buttermilk Falls and Robert H. Treman
 add_heading_styled('Buttermilk Falls and Robert H. Treman State Parks', level=3)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'The half-day gorge loop south of town', italic=True)
 p = doc.add_paragraph()
 add_run(p, 'Both within five miles south of downtown ')
 add_hyperlink(p, 'Ithaca', 'https://www.google.com/maps/search/?api=1&query=Ithaca+NY', MAPS_GREEN)
 add_run(p, '. ')
 add_hyperlink(p, 'Buttermilk Falls', 'https://www.google.com/maps/search/?api=1&query=Buttermilk+Falls+State+Park+Ithaca+NY', MAPS_GREEN)
-add_run(p, ' has a natural swimming pool at the base \u2014 cold, clear. ')
+add_run(p, ' has a natural swimming pool at the base \u2014 cold, clear, the kind of swim people remember for years. ')
 add_hyperlink(p, 'Robert H. Treman State Park', 'https://www.google.com/maps/search/?api=1&query=Robert+H+Treman+State+Park+Ithaca+NY', MAPS_GREEN)
-add_run(p, '\'s Enfield Glen contains 12 waterfalls including the 115-foot Lucifer Falls. Together they form the core of a half-day loop from ')
+add_run(p, '\'s Enfield Glen contains 12 waterfalls including the 115-foot Lucifer Falls, which is worth the hike by itself. Together they form the core of a half-day loop from ')
 add_hyperlink(p, 'Ithaca', 'https://www.google.com/maps/search/?api=1&query=Ithaca+NY', MAPS_GREEN)
 add_run(p, '.')
 
 # Cascadilla Gorge
 add_heading_styled('Cascadilla Gorge', level=3)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'For some Cornell students, this is just the commute', italic=True)
 p = doc.add_paragraph()
 add_run(p, 'Runs from downtown ')
 add_hyperlink(p, 'Ithaca', 'https://www.google.com/maps/search/?api=1&query=Ithaca+NY', MAPS_GREEN)
 add_run(p, ' up to the ')
 add_hyperlink(p, 'Cornell', 'https://en.wikipedia.org/wiki/Cornell_University', WIKI_BLUE)
-add_run(p, ' campus \u2014 400 feet of elevation through layered Devonian shale, six waterfalls, stone staircases from the 1920s. For some ')
-add_hyperlink(p, 'Cornell', 'https://en.wikipedia.org/wiki/Cornell_University', WIKI_BLUE)
-add_run(p, ' students, it\'s just the walk to class.')
+add_run(p, ' campus \u2014 400 feet of elevation through layered Devonian shale, six waterfalls, stone staircases built in the 1920s. The gorge trail is a geological classroom in motion: each layer of exposed rock tells a different chapter of the 380-million-year Devonian story.')
 
 # Montezuma
 add_heading_styled('Montezuma National Wildlife Refuge', level=3)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'A million ducks in a single autumn', italic=True)
 p = doc.add_paragraph()
-add_run(p, 'At the lake\'s north end. Over 300 bird species documented. The Cayuga people called the lake Tiohero \u2014 lake of flags or rushes \u2014 because of these northern marshes. Over a million ducks counted here in a single autumn. Fall and spring migration seasons are best.')
+add_run(p, 'At the lake\'s north end. Over 300 bird species documented. The Cayuga people called the lake Tiohero \u2014 lake of flags or rushes \u2014 because of these northern marshes. Over a million ducks counted here in a single autumn. The auto tour loop is 4.5 miles through marsh and upland habitat. Fall and spring migration seasons are best; serious birders should come at dawn.')
 
 add_image_placeholder('IMAGE: Montezuma National Wildlife Refuge \u2014 marsh and migratory birds, Cayuga Lake north end')
 cap = doc.add_paragraph()
