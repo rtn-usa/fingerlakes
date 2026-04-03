@@ -417,13 +417,13 @@ add_hyperlink(badge, 'Finger Lakes Heritage Trail', 'https://upstate.tourismo.ap
 add_run(badge, ' passport badge.')
 
 sites = [
-    ("Women's Rights National Historical Park", 'Seneca Falls', 'The Wesleyan Chapel, Stanton House, and M\'Clintock House in Waterloo. Start at the NPS visitor center on Fall Street.', 'https://www.nps.gov/wori/', 'https://www.google.com/maps/search/?api=1&query=Womens+Rights+National+Historical+Park+Seneca+Falls+NY'),
-    ("M'Clintock House", 'Waterloo NY', 'Where the Declaration of Sentiments was drafted in 1848. Part of Women\'s Rights NHP. Open seasonally.', None, 'https://www.google.com/maps/search/?api=1&query=MClintock+House+Waterloo+NY'),
-    ('National Memorial Day Museum', 'Waterloo NY', '1866. The first community-wide observance. Congressional recognition 1966.', None, 'https://www.google.com/maps/search/?api=1&query=National+Memorial+Day+Museum+Waterloo+NY'),
-    ('New York State Agricultural Experiment Station', 'Geneva NY', 'Where Konstantin Frank proved Riesling could grow here in 1951. Grounds open to visitors.', None, 'https://www.google.com/maps/search/?api=1&query=NY+Agricultural+Experiment+Station+Geneva+NY'),
-    ('Hobart and William Smith Colleges', 'Geneva NY', 'Where Elizabeth Blackwell became the first woman doctor in the US in 1849. Lakefront campus, open to visitors.', None, 'https://www.google.com/maps/search/?api=1&query=Hobart+and+William+Smith+Colleges+Geneva+NY'),
+    ("Women's Rights National Historical Park", 'Seneca Falls', 'Where 300 people rewrote the rules in two days', 'The Wesleyan Chapel where the 1848 convention met, the Stanton House, and the M\'Clintock House in Waterloo where the Declaration of Sentiments was drafted. Start at the NPS visitor center on Fall Street. The chapel interior has been partially reconstructed; the original walls are visible behind glass. Free admission.', 'https://www.nps.gov/wori/', 'https://www.google.com/maps/search/?api=1&query=Womens+Rights+National+Historical+Park+Seneca+Falls+NY'),
+    ("M'Clintock House", 'Waterloo NY', 'The kitchen table where the Declaration was written', 'Where Elizabeth Cady Stanton and her collaborators drafted the Declaration of Sentiments in 1848, days before the convention. Part of Women\'s Rights NHP. The house is restored to its 1848 appearance. Open seasonally; check NPS schedule.', None, 'https://www.google.com/maps/search/?api=1&query=MClintock+House+Waterloo+NY'),
+    ('National Memorial Day Museum', 'Waterloo NY', 'The first observance, before it had a name', '1866. Pharmacist Henry Welles and General John Murray organized the first community-wide Memorial Day observance in Waterloo. Congressional recognition came a century later in 1966. The museum documents the origins and the town\'s claim. Same main street as the M\'Clintock House.', None, 'https://www.google.com/maps/search/?api=1&query=National+Memorial+Day+Museum+Waterloo+NY'),
+    ('New York State Agricultural Experiment Station', 'Geneva NY', 'Where the experts were wrong and Konstantin Frank was right', 'Cornell\'s research station where scientists spent decades insisting European wine grapes could not survive Finger Lakes winters. In 1951, Konstantin Frank arrived and proved them wrong. The station\'s work on cold-climate viticulture continues. Grounds open to visitors; the research plots are visible from the road.', None, 'https://www.google.com/maps/search/?api=1&query=NY+Agricultural+Experiment+Station+Geneva+NY'),
+    ('Hobart and William Smith Colleges', 'Geneva NY', 'Known for Elizabeth Blackwell and the best free lake view at the north end', 'The institution where Elizabeth Blackwell became the first woman to receive a medical degree in the United States in 1849, after being rejected by 29 other schools. The lakefront campus sits on a bluff above Seneca Lake. The view from the campus is the best free view at the north end. Open to visitors.', None, 'https://www.google.com/maps/search/?api=1&query=Hobart+and+William+Smith+Colleges+Geneva+NY'),
 ]
-for name, loc, desc, official_url, maps_url in sites:
+for name, loc, subtitle, desc, official_url, maps_url in sites:
     p = doc.add_paragraph()
     add_run(p, '\u2014 ')
     if official_url:
@@ -432,7 +432,9 @@ for name, loc, desc, official_url, maps_url in sites:
         add_run(p, name, bold=True)
     add_run(p, ' ')
     add_hyperlink(p, loc, maps_url, MAPS_GREEN)
-    add_run(p, ' ' + desc)
+    sub_p = doc.add_paragraph()
+    add_run(sub_p, subtitle, italic=True)
+    doc.add_paragraph(desc)
 
 print("Part 3 done: heritage corridor")
 
@@ -482,21 +484,23 @@ add_run(p, ' on the south, so a two-day loop covering both shores is straightfor
 # Producers worth naming
 add_heading_styled('Producers worth naming', level=3)
 producers = [
-    ('Hermann J. Wiemer Vineyard', 'Dundee NY \u00b7 west shore', 'The benchmark for what Seneca can do at its most precise. World\'s Top 100 Wineries. Biodynamic certified.', 'https://www.google.com/maps/search/?api=1&query=Hermann+J+Wiemer+Vineyard+Dundee+NY'),
-    ('Wagner Vineyards', 'Lodi NY \u00b7 east shore', 'The most complete stop on the east shore. Estate grown, winery, brewery, restaurant, panoramic lake views. Open daily.', 'https://www.google.com/maps/search/?api=1&query=Wagner+Vineyards+Lodi+NY'),
-    ('Boundary Breaks Vineyard', 'Lodi NY \u00b7 east shore', 'Single-vineyard Riesling program. The argument for why site designations matter in this AVA.', 'https://www.google.com/maps/search/?api=1&query=Boundary+Breaks+Vineyard+Lodi+NY'),
-    ('Lamoreaux Landing Wine Cellars', 'Lodi NY \u00b7 east shore', 'Dramatic Greek Revival architecture. One of the more serious east-shore Riesling programs.', 'https://www.google.com/maps/search/?api=1&query=Lamoreaux+Landing+Wine+Cellars+Lodi+NY'),
-    ('Glenora Wine Cellars', 'Dundee NY \u00b7 west shore', 'The first winery on Seneca Lake (1977). Inn and restaurant on site. The logical west-shore overnight.', 'https://www.google.com/maps/search/?api=1&query=Glenora+Wine+Cellars+Dundee+NY'),
-    ('Red Newt Cellars', 'Hector NY \u00b7 east shore', 'Winery and bistro. The best farm-to-table lunch stop on the east shore.', 'https://www.google.com/maps/search/?api=1&query=Red+Newt+Cellars+Hector+NY'),
-    ('Atwater Vineyards', 'Burdett NY \u00b7 east shore', 'Consistent quality, lake views, good entry point for the east-shore day.', 'https://www.google.com/maps/search/?api=1&query=Atwater+Vineyards+Burdett+NY'),
-    ('Hillick & Hobbs Estate', 'Burdett NY \u00b7 east shore', 'Small-production estate-grown. The east-shore expression at its most focused.', 'https://www.google.com/maps/search/?api=1&query=Hillick+and+Hobbs+Estate+Burdett+NY'),
+    ('Hermann J. Wiemer Vineyard', 'Dundee NY \u00b7 west shore', 'Where the Mosel meets Seneca', 'The benchmark for what Seneca can do at its most precise. World\'s Top 100 Wineries. Biodynamic certified. Hermann Wiemer came from Germany\'s Mosel Valley, saw the west-shore shale slopes in the 1970s, and stayed for the rest of his working life.', 'https://www.google.com/maps/search/?api=1&query=Hermann+J+Wiemer+Vineyard+Dundee+NY'),
+    ('Wagner Vineyards', 'Lodi NY \u00b7 east shore', 'Wine, beer, and lunch on the same hilltop', 'The most complete stop on the east shore. Estate-grown winery, brewery, and restaurant under one roof, with panoramic lake views. The Ginny Lee Cafe serves lunch on a terrace above the water. Open daily year-round.', 'https://www.google.com/maps/search/?api=1&query=Wagner+Vineyards+Lodi+NY'),
+    ('Boundary Breaks Vineyard', 'Lodi NY \u00b7 east shore', 'One vineyard, one variety, no buses', 'Single-vineyard Riesling program. Wine Enthusiast named the Dry Riesling to its Top 100 Wines in the World twice. No groups larger than six. The argument for why site designations matter in this AVA.', 'https://www.google.com/maps/search/?api=1&query=Boundary+Breaks+Vineyard+Lodi+NY'),
+    ('Lamoreaux Landing Wine Cellars', 'Lodi NY \u00b7 east shore', 'Three generations and the best architecture on the trail', 'Dramatic Greek Revival tasting room with an unobstructed lake view. The Lamoreaux family has been farming grapes at this Lodi hillside for three generations. One of the more serious east-shore Riesling programs.', 'https://www.google.com/maps/search/?api=1&query=Lamoreaux+Landing+Wine+Cellars+Lodi+NY'),
+    ('Glenora Wine Cellars', 'Dundee NY \u00b7 west shore', 'First on the lake, still the mid-shore overnight', 'The first winery on Seneca Lake, established 1977. The 30-room inn sits above the vineyard. Veraisons Restaurant changes its menu each season. The logical west-shore overnight.', 'https://www.google.com/maps/search/?api=1&query=Glenora+Wine+Cellars+Dundee+NY'),
+    ('Red Newt Cellars', 'Hector NY \u00b7 east shore', 'The reason to take Route 414', 'Winery and farm-to-table bistro. The best lunch stop on the east shore. Thursday through Saturday for dinner; Sunday for the Jazz Brunch. Scott Signori opened it in 1999; his team has kept the same specificity since his passing in 2021.', 'https://www.google.com/maps/search/?api=1&query=Red+Newt+Cellars+Hector+NY'),
+    ('Atwater Vineyards', 'Burdett NY \u00b7 east shore', 'The first stop heading north on Route 414', 'Consistent quality, lake views from the terrace, and enough range to orient first-time visitors. Close enough to Hillick & Hobbs and Two Goats that the first two hours on Route 414 sort themselves out.', 'https://www.google.com/maps/search/?api=1&query=Atwater+Vineyards+Burdett+NY'),
+    ('Hillick & Hobbs Estate', 'Burdett NY \u00b7 east shore', 'Small production, longer conversations', 'Single east-shore vineyard, limited production, and a tasting experience that doesn\'t feel like a line. The estate farms the shale slopes that give east-shore Seneca its claim to Mosel comparison.', 'https://www.google.com/maps/search/?api=1&query=Hillick+and+Hobbs+Estate+Burdett+NY'),
 ]
-for name, loc, desc, maps_url in producers:
+for name, loc, subtitle, desc, maps_url in producers:
     p = doc.add_paragraph()
     add_run(p, '\u2014 ')
     add_hyperlink(p, name, maps_url, MAPS_GREEN)
-    add_run(p, ' ' + loc + ' ')
-    add_run(p, desc)
+    add_run(p, ' ' + loc)
+    sub_p = doc.add_paragraph()
+    add_run(sub_p, subtitle, italic=True)
+    doc.add_paragraph(desc)
 
 # Tier 1 producers
 add_heading_styled('Tier 1', level=3)
@@ -594,31 +598,43 @@ for name, subtitle, desc, maps_url in tier2:
 # ============================================================
 add_heading_styled('Farms, cider, and food', level=2)
 
-p = doc.add_paragraph()
-add_run(p, 'The ')
-add_hyperlink(p, 'Finger Lakes National Forest', 'https://www.google.com/maps/search/?api=1&query=Finger+Lakes+National+Forest+Hector+NY', MAPS_GREEN)
-add_run(p, ' pastures are still leased to working farms: the agricultural tradition on the ridge between Seneca and Cayuga Lakes predates the wine trail by two centuries. Hazlitt 1852 Vineyards in ')
-add_hyperlink(p, 'Hector', 'https://www.google.com/maps/search/?api=1&query=Hector+NY', MAPS_GREEN)
-add_run(p, ' runs The Cider Tree hard cider operation alongside the winery, earning both wine trail and ')
-add_hyperlink(p, 'Craft Beverage Trail', 'https://upstate.tourismo.app/trails/finger-lakes-craft-beverage-trail', UPSTATE_RED)
-add_run(p, ' badges on a single visit. ')
-add_hyperlink(p, 'Two Goats Brewing', 'https://www.google.com/maps/search/?api=1&query=Two+Goats+Brewing+Burdett+NY', MAPS_GREEN)
-add_run(p, ' and ')
-add_hyperlink(p, 'Finger Lakes Distilling', 'https://www.google.com/maps/search/?api=1&query=Finger+Lakes+Distilling+Burdett+NY', MAPS_GREEN)
-add_run(p, ' in ')
-add_hyperlink(p, 'Burdett', 'https://www.google.com/maps/search/?api=1&query=Burdett+NY', MAPS_GREEN)
-add_run(p, ' round out the craft beverage options on the east shore. The Blueberry Patch in the ')
-add_hyperlink(p, 'Finger Lakes National Forest', 'https://www.google.com/maps/search/?api=1&query=Finger+Lakes+National+Forest+Hector+NY', MAPS_GREEN)
-add_run(p, ' offers U-pick blueberries in season.')
+# --- Hazlitt / Cider Tree ---
+farm_p = doc.add_paragraph()
+add_run(farm_p, '\u2014 ')
+add_hyperlink(farm_p, 'Hazlitt 1852 Vineyards / The Cider Tree', 'https://www.google.com/maps/search/?api=1&query=Hazlitt+1852+Vineyards+Hector+NY', MAPS_GREEN)
+add_run(farm_p, ' ')
+add_hyperlink(farm_p, 'Hector', 'https://www.google.com/maps/search/?api=1&query=Hector+NY', MAPS_GREEN)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'Two trail badges on one stop since before the Civil War', italic=True)
+doc.add_paragraph('The Hazlitt family has farmed this east-shore hillside since 1852. The Cider Tree hard cider operation runs alongside the winery on the same property, earning both a wine trail and Craft Beverage Trail badge on a single visit. The breadth is intentional: a working farm operation that serves everyone from serious collectors to first-time trail visitors.')
 
-p = doc.add_paragraph()
-add_run(p, 'The bistro at ')
-add_hyperlink(p, 'Red Newt Cellars', 'https://www.google.com/maps/search/?api=1&query=Red+Newt+Cellars+Hector+NY', MAPS_GREEN)
-add_run(p, ' sources from local farms and is the best farm-to-table lunch stop on the east shore. The Ginny Lee Cafe at ')
-add_hyperlink(p, 'Wagner Vineyards', 'https://www.google.com/maps/search/?api=1&query=Wagner+Vineyards+Lodi+NY', MAPS_GREEN)
-add_run(p, ' serves lunch with vineyard and lake views. Veraisons Restaurant at ')
-add_hyperlink(p, 'Glenora Wine Cellars', 'https://www.google.com/maps/search/?api=1&query=Glenora+Wine+Cellars+Dundee+NY', MAPS_GREEN)
-add_run(p, ' changes its menu each season sourcing from Finger Lakes farms.')
+# --- Two Goats Brewing ---
+farm_p = doc.add_paragraph()
+add_run(farm_p, '\u2014 ')
+add_hyperlink(farm_p, 'Two Goats Brewing', 'https://www.google.com/maps/search/?api=1&query=Two+Goats+Brewing+Burdett+NY', MAPS_GREEN)
+add_run(farm_p, ' ')
+add_hyperlink(farm_p, 'Burdett', 'https://www.google.com/maps/search/?api=1&query=Burdett+NY', MAPS_GREEN)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'The east-shore stop for people who don\'t drink wine', italic=True)
+doc.add_paragraph('Craft brewery in the Burdett cluster on Route 414. Close enough to Hillick & Hobbs and Finger Lakes Distilling that the first hour on the east shore covers wine, beer, and spirits without moving the car far. Craft Beverage Trail badge.')
+
+# --- Finger Lakes Distilling ---
+farm_p = doc.add_paragraph()
+add_run(farm_p, '\u2014 ')
+add_hyperlink(farm_p, 'Finger Lakes Distilling', 'https://www.google.com/maps/search/?api=1&query=Finger+Lakes+Distilling+Burdett+NY', MAPS_GREEN)
+add_run(farm_p, ' ')
+add_hyperlink(farm_p, 'Burdett', 'https://www.google.com/maps/search/?api=1&query=Burdett+NY', MAPS_GREEN)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'Grain-to-glass spirits on the east-shore bluff', italic=True)
+doc.add_paragraph('Craft distillery producing gin, vodka, whiskey, and grappa from local grain and grape. Part of the Burdett cluster that makes the east-shore entry point the most complete first stop on the trail. Craft Beverage Trail badge.')
+
+# --- Blueberry Patch ---
+farm_p = doc.add_paragraph()
+add_run(farm_p, '\u2014 Blueberry Patch ')
+add_hyperlink(farm_p, 'Finger Lakes National Forest', 'https://www.google.com/maps/search/?api=1&query=Finger+Lakes+National+Forest+Hector+NY', MAPS_GREEN)
+sub_p = doc.add_paragraph()
+add_run(sub_p, 'U-pick blueberries in a national forest', italic=True)
+doc.add_paragraph('Adjacent to the nine-site first-come campground in the Finger Lakes National Forest. U-pick blueberries in season. The kind of stop that doesn\'t appear on wine trail itineraries, which is part of its appeal.')
 
 print("Part 5 done: tier 2 and farms")
 
@@ -649,19 +665,21 @@ add_run(p, ' is New York\'s only national forest, 16,000 acres on the ridge betw
 # Named sites list
 add_heading_styled('Natural sites', level=3)
 nat_sites = [
-    ('Watkins Glen State Park', 'Watkins Glen NY', '19 waterfalls in 1.5 miles. Gorge trail open mid-May through late October. Rim trails year-round. Go early.', 'https://en.wikipedia.org/wiki/Watkins_Glen_State_Park', WIKI_BLUE),
-    ('Shequaga Falls', 'Montour Falls NY', '165-foot waterfall in the center of the village. Pull over.', 'https://www.google.com/maps/search/?api=1&query=Shequaga+Falls+Montour+Falls+NY', MAPS_GREEN),
-    ('Hector Falls', 'Burdett NY', 'Visible from Route 414 on the east shore. Pull over safely.', 'https://www.google.com/maps/search/?api=1&query=Hector+Falls+Burdett+NY', MAPS_GREEN),
-    ('Finger Lakes National Forest', 'Hector NY', 'New York\'s only national forest. 30 miles of trails between Seneca and Cayuga. Working cattle pastures. Blueberry Patch campground.', 'https://www.google.com/maps/search/?api=1&query=Finger+Lakes+National+Forest+Hector+NY', MAPS_GREEN),
-    ('Seneca Lake State Park', 'Geneva NY', 'Free public beach, boat launch, and marina at the lake\'s north end in Geneva.', 'https://www.google.com/maps/search/?api=1&query=Seneca+Lake+State+Park+Geneva+NY', MAPS_GREEN),
+    ('Watkins Glen State Park', 'Watkins Glen NY', 'The best gorge trail in the northeast', '19 waterfalls in 1.5 miles. The gorge trail winds through tunnels, over and under falls, past 200-foot water-carved shale walls. 800 stone steps, rebuilt by the CCC after a 1935 flood. Gorge trail open mid-May through late October; rim trails year-round. Get there before 9am in summer or after 4pm. The gorge fills up.', 'https://en.wikipedia.org/wiki/Watkins_Glen_State_Park', WIKI_BLUE),
+    ('Shequaga Falls', 'Montour Falls NY', 'Most people drive through without stopping. That is a mistake.', '165-foot waterfall in the center of Montour Falls village, five minutes south of Watkins Glen. The falls are visible from the main road. There is no trail required, no fee, and no crowd. One of the most undervisited natural features in the Finger Lakes.', 'https://www.google.com/maps/search/?api=1&query=Shequaga+Falls+Montour+Falls+NY', MAPS_GREEN),
+    ('Hector Falls', 'Burdett NY', 'A pull-over waterfall on the east-shore drive', 'Visible from Route 414 on the east shore. The upper cascades are seen from the road; the lower cascades are visible from the lake. Pull over safely. Worth combining with the first east-shore winery stops at Atwater and Hillick & Hobbs nearby.', 'https://www.google.com/maps/search/?api=1&query=Hector+Falls+Burdett+NY', MAPS_GREEN),
+    ('Finger Lakes National Forest', 'Hector NY', 'New York\'s only national forest, and the cattle have the right of way', 'Sixteen thousand acres on the ridge between Seneca and Cayuga Lakes. Over 100 Depression-era farms were purchased by the federal government between 1938 and 1941. The Forest Service still leases the pastures to working farms: hikers on the 30-mile trail system may encounter free-ranging cattle alongside vineyard views. The Interloken Trail runs 12 miles north-south. Blueberry Patch campground is nine first-come sites with a U-pick patch adjacent.', 'https://www.google.com/maps/search/?api=1&query=Finger+Lakes+National+Forest+Hector+NY', MAPS_GREEN),
+    ('Seneca Lake State Park', 'Geneva NY', 'Known for the free public beach at the north end', 'Free public beach, boat launch, and marina at the lake\'s north end in Geneva. The practical starting point for visitors based in Geneva who want lake access without a winery attached. Picnic facilities, playground, and Sprayground water feature in summer.', 'https://www.google.com/maps/search/?api=1&query=Seneca+Lake+State+Park+Geneva+NY', MAPS_GREEN),
 ]
-for name, loc, desc, url, color in nat_sites:
+for name, loc, subtitle, desc, url, color in nat_sites:
     p = doc.add_paragraph()
     add_run(p, '\u2014 ')
     add_hyperlink(p, name, url, color)
     add_run(p, ' ')
     add_hyperlink(p, loc, f'https://www.google.com/maps/search/?api=1&query={loc.replace(" ", "+").replace(",", "")}', MAPS_GREEN)
-    add_run(p, ' ' + desc)
+    sub_p = doc.add_paragraph()
+    add_run(sub_p, subtitle, italic=True)
+    doc.add_paragraph(desc)
 
 # ============================================================
 # GETTING HERE AND GETTING AROUND (moved to canonical position)
