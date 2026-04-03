@@ -27,6 +27,23 @@ for section in doc.sections:
     section.left_margin = Inches(1)
     section.right_margin = Inches(1)
 
+# --- Define Hyperlink character style so links are clickable ---
+from docx.oxml.ns import qn
+styles_element = doc.styles.element
+hyperlink_style = parse_xml(
+    f'<w:style {nsdecls("w")} w:type="character" w:styleId="Hyperlink">'
+    f'  <w:name w:val="Hyperlink"/>'
+    f'  <w:basedOn w:val="DefaultParagraphFont"/>'
+    f'  <w:uiPriority w:val="99"/>'
+    f'  <w:unhideWhenUsed/>'
+    f'  <w:rPr>'
+    f'    <w:color w:val="0563C1"/>'
+    f'    <w:u w:val="single"/>'
+    f'  </w:rPr>'
+    f'</w:style>'
+)
+styles_element.append(hyperlink_style)
+
 # --- Hyperlink colors ---
 WIKI_BLUE = '0563C1'
 MAPS_GREEN = '1A7340'
